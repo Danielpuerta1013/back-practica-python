@@ -2,13 +2,15 @@ from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
+
 #llamar a la base de datos
 
 #definir las tablas del api 
+Base=declarative_base()
 
-class Prooveedor():
+class Prooveedor(Base):
     __tablename__ = 'proveedores'
-    id= Column(Integer, primary_key=True)
+    id= Column(Integer, primary_key=True, autoincrement=True)
     nombres= Column(String(50))
     documento= Column(String(20))
     direccion= Column(String(50))
