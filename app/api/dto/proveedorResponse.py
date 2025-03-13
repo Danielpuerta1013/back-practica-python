@@ -2,8 +2,7 @@ from pydantic import BaseModel,Field
 from datetime import date
 
 
-class ProveedorResponse(BaseModel):
-    id:int
+class ProveedorResponse(BaseModel):    
     nombres:str
     documento:str
     direccion:str
