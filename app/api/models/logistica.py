@@ -13,3 +13,18 @@ class Logistica(Base):
     contactoEncargado= Column(String(50))
     fechaRecepcion= Column(Date)
     detalles= Column(String(200))
+
+
+class Proveedor(Base):
+    __tablename__ = 'proveedor'
+    id= Column(Integer, primary_key=True, autoincrement=True)
+    nombres= Column(String(50))
+    documento= Column(String(20))
+    direccion= Column(String(50))
+    ciudad=Column(String(20))
+    representante= Column(String(50))
+    telefono= Column(String(20))
+    correo= Column(String(50))
+    fechaReparto= Column(Date)
+    costoEnvio= Column(Integer)
+    descripcion= Column(String(200))

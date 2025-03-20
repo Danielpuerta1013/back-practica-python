@@ -8,8 +8,8 @@ from app.api.dto.proveedorResponse import ProveedorResponse
 from app.api.dto.logisticaDto import LogisticaDTO
 from app.api.dto.logisticaResponse import logisticaResponse
 
-from app.api.models.logistica import Logistica
-from app.api.models.proveedor import Prooveedor
+from app.api.models.logistica import Logistica, Proveedor
+#from app.api.models.proveedor import Proveedor
 
 from app.database.connection import SessionLocal, engine
 
@@ -31,7 +31,7 @@ def conectarConBd():
 @rutas.post("/proveedor", response_model=ProveedorResponse, summary="Servicio para crear un nuevo proveedor")
 def guardarProveedor(datosProveedor:ProveedorDTO , database:Session=Depends(conectarConBd)):
     try:
-        proveedorToSave=Prooveedor(
+        proveedorToSave=Proveedor(
             nombres=datosProveedor.nombres,
             documento=datosProveedor.documento,
             direccion=datosProveedor.direccion,
