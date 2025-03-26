@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.database.connection import engine
-from app.api.models.proveedor import Base
+
 from app.api.models.logistica import Base
 from app.api.endpoints.endpoints import rutas
 
