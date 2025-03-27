@@ -80,7 +80,7 @@ def guardarLogistica(datosLogistica:LogisticaDTO, database:Session=Depends(conec
 @rutas.get("/consultarProveedores",response_model=List[ProveedorResponse], summary="Servicio para consultar los proveedores")
 def buscarProveedores(database:Session=Depends(conectarConBd)):
     try:
-        proveedores=database.query(Prooveedor).all()
+        proveedores=database.query(Proveedor).all()
         return proveedores
     except Exception as error:
         database.rollback()
